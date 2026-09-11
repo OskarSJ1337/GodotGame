@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cuc4bpm1rhvax"]
 
+[ext_resource type="Texture2D" uid="uid://cc7uays3creka" path="res://Assets/placeholders/placeholder.png" id="1_0tvmx"]
+[ext_resource type="PackedScene" uid="uid://ctrtle1hw0e24" path="res://scenes/battle/paddle.tscn" id="1_sm3ht"]
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p8roq"]
 a = Vector2(-64, -56)
 b = Vector2(-128, 8)
@@ -52,6 +55,11 @@ offset_left = 256.0
 offset_right = 896.0
 offset_bottom = 640.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Placeholder" type="Sprite2D" parent="Borders" unique_id=57530635]
+position = Vector2(576.25555, 321.75003)
+scale = Vector2(2.8806305, 2.8806305)
+texture = ExtResource("1_0tvmx")
 
 [node name="ColorRect" type="ColorRect" parent="Borders" unique_id=1477381399]
 offset_left = 221.09837
@@ -126,3 +134,9 @@ shape = SubResource("RectangleShape2D_ykgmc")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders" unique_id=365411639]
 position = Vector2(574.75, 654.5)
 shape = SubResource("RectangleShape2D_ykgmc")
+
+[node name="Paddle" parent="." unique_id=1281428957 instance=ExtResource("1_sm3ht")]
+position = Vector2(309, 555)
+
+[node name="Paddle2" parent="." unique_id=1672482190 instance=ExtResource("1_sm3ht")]
+position = Vector2(818, 127)
