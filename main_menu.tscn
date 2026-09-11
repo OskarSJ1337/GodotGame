@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://dsjrjfjbsst5a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykgmc"]
-bg_color = Color(0.8598884, 0.463117, 0.5120883, 1)
+[ext_resource type="Texture2D" uid="uid://8txdqjq37y3p" path="res://Assets/backgrounds/Ocean5.png" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="2_fu7sn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0q8dx"]
+texture = ExtResource("1_7vrkn")
+modulate_color = Color(0.86898494, 0.8689849, 0.8689849, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.95969635, 0.5800322, 0.6564213, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
 
 [node name="MainMenu" type="Control" unique_id=1508785037]
 layout_mode = 3
@@ -11,20 +47,89 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="." unique_id=171211994]
+[node name="Panel" type="Panel" parent="." unique_id=2125370798]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0q8dx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=218960285]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.66188
-offset_top = -55.25
-offset_right = 187.66188
-offset_bottom = 55.25
+offset_left = -299.0
+offset_top = -105.5
+offset_right = 299.0
+offset_bottom = 105.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 23
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=171211994]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_ykgmc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jix8l")
 text = "Start"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1379401584]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jix8l")
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=829887767]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jix8l")
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=1555546531]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -299.0
+offset_right = 287.5
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.6666667, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fu7sn")
+theme_override_font_sizes/font_size = 64
+text = "Le epic videogame"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1028995399]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1963641197]
