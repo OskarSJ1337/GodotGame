@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://cuc4bpm1rhvax"]
 
-[ext_resource type="PackedScene" uid="uid://ctrtle1hw0e24" path="res://scenes/battle/paddle.tscn" id="1_sm3ht"]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p8roq"]
 a = Vector2(-64, -56)
 b = Vector2(-128, 8)
@@ -55,6 +53,36 @@ offset_right = 896.0
 offset_bottom = 640.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
+[node name="ColorRect" type="ColorRect" parent="Borders" unique_id=1477381399]
+offset_left = 221.09837
+offset_top = 218.95009
+offset_right = 282.43005
+offset_bottom = 261.17822
+rotation = 0.79017234
+scale = Vector2(2.32207, 3.220656)
+color = Color(0.7963031, 0.0005463803, 0.80626625, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Borders" unique_id=1772107559]
+offset_left = 576.00006
+offset_top = 574.0
+offset_right = 672.00006
+offset_bottom = 684.1289
+rotation = 0.7867492
+
+[node name="ColorRect3" type="ColorRect" parent="Borders" unique_id=972515662]
+offset_left = 904.99994
+offset_top = 245.99997
+offset_right = 1027.0
+offset_bottom = 350.99997
+rotation = 0.7900755
+
+[node name="ColorRect4" type="ColorRect" parent="Borders" unique_id=100553270]
+offset_left = 579.0
+offset_top = -152.00002
+offset_right = 731.11896
+offset_bottom = 4.295456
+rotation = 0.7865617
+
 [node name="Top" type="CollisionShape2D" parent="Borders" unique_id=745320179]
 position = Vector2(384, 376)
 shape = SubResource("SegmentShape2D_p8roq")
@@ -98,7 +126,3 @@ shape = SubResource("RectangleShape2D_ykgmc")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders" unique_id=365411639]
 position = Vector2(574.75, 654.5)
 shape = SubResource("RectangleShape2D_ykgmc")
-
-[node name="Paddle" parent="." unique_id=1281428957 instance=ExtResource("1_sm3ht")]
-position = Vector2(424, 552)
-rotation = 2.4731317
