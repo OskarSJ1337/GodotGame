@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://baqren2j0fbmu"]
+
+[node name="Node2D" type="Node2D" unique_id=2109959894]
+
+[node name="PINGUS" type="StaticBody2D" parent="." unique_id=2069400159]
+
+[node name="ColorRect" type="ColorRect" parent="PINGUS" unique_id=173823022]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.3254902, 1, 1)
