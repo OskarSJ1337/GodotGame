@@ -8,17 +8,7 @@ func getYDir() -> float:
 
 
 func _physics_process(delta: float) -> void:
-	var dir: Vector2=Vector2(0,getYDir())
+	var base_dir = Vector2(0,getYDir())
+	var dir: Vector2=base_dir.rotated(deg_to_rad(rotation_degrees))
 	velocity = dir * speed
 	move_and_slide()
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
