@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dsjrjfjbsst5a"]
 
 [ext_resource type="Texture2D" uid="uid://8txdqjq37y3p" path="res://Assets/backgrounds/Ocean5.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://c23dd5hnmlfnk" path="res://scripts/systems/changeScene.gd" id="2_2o76q"]
 [ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="2_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://cuc4bpm1rhvax" path="res://scenes/battle/game.tscn" id="3_6bivr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0q8dx"]
 texture = ExtResource("1_7vrkn")
@@ -82,6 +84,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jix8l")
 text = "Start"
+script = ExtResource("2_2o76q")
+next_scene = ExtResource("3_6bivr")
 
 [node name="Options" type="Button" parent="VBoxContainer" unique_id=1379401584]
 layout_mode = 2
