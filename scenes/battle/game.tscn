@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cc7uays3creka" path="res://Assets/placeholders/placeholder.png" id="1_0tvmx"]
 [ext_resource type="Texture2D" uid="uid://cmih6oe4f75wl" path="res://Assets/placeholders/Placeholderbackground.png" id="1_md7un"]
+[ext_resource type="PackedScene" uid="uid://ctrtle1hw0e24" path="res://scenes/battle/paddle.tscn" id="1_sm3ht"]
 [ext_resource type="PackedScene" uid="uid://bihlbfdikk86r" path="res://scenes/other/high_level_ui.tscn" id="3_md7un"]
 [ext_resource type="Script" uid="uid://doqn5gm6b22rd" path="res://scripts/systems/high_level_multiplayer_spawner.gd" id="4_l63dy"]
 
@@ -120,4 +121,7 @@ offset_right = 512.0
 offset_bottom = 312.0
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1435765049]
+_spawnable_scenes = PackedStringArray("uid://ctrtle1hw0e24")
+spawn_path = NodePath("..")
 script = ExtResource("4_l63dy")
+network_player = ExtResource("1_sm3ht")
