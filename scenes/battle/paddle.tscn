@@ -6,6 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b3qe"]
 size = Vector2(20, 60)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_f4eew"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Paddle" type="CharacterBody2D" unique_id=1281428957]
 script = ExtResource("1_f4eew")
 
@@ -17,3 +22,6 @@ texture = ExtResource("2_fo72n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=774012834]
 shape = SubResource("RectangleShape2D_8b3qe")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1387413166]
+replication_config = SubResource("SceneReplicationConfig_f4eew")
