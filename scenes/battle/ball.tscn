@@ -4,6 +4,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b3qe"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tdgwq"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Ball" type="CharacterBody2D" unique_id=1524054120]
 script = ExtResource("1_tdgwq")
 
@@ -11,3 +16,6 @@ script = ExtResource("1_tdgwq")
 shape = SubResource("CircleShape2D_8b3qe")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1941397222]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=92231342]
+replication_config = SubResource("SceneReplicationConfig_tdgwq")
