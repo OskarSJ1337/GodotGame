@@ -16,3 +16,17 @@ offset_top = 229.0
 offset_right = 463.0
 offset_bottom = 250.0
 size_flags_horizontal = 4
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=364937127]
+offset_left = 352.0
+offset_top = 128.0
+offset_right = 592.0
+offset_bottom = 167.0
+placeholder_text = "IP Goes here"
+
+[node name="LineEdit2" type="LineEdit" parent="." unique_id=1809736055]
+offset_left = 352.0
+offset_top = 168.0
+offset_right = 592.0
+offset_bottom = 208.0
+placeholder_text = "Port goes here"
