@@ -7,9 +7,13 @@ func _ready() -> void:
 	spawn_function = Callable(self, "_spawn_player")
 	multiplayer.peer_connected.connect(spawn_player)
 	HighLevelNetworkHandler.server_started.connect(_spawn_host_player)
+	if multiplayer.is_server():
+		call_deferred("_spawn_host_player")
 
 func _spawn_host_player() -> void:
-	spawn_player(1)
+	var spawn_parent := get_node(spawn_path)
+	if spawn_parent.get_node_or_null("1") == null:
+		spawn_player(1)
 	
 func spawn_player(id: int) -> void:
 	if !multiplayer.is_server(): return
