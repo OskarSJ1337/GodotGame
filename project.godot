@@ -22,7 +22,6 @@ HighLevelNetworkHandler="*uid://dfvtpve718i4w"
 [display]
 
 window/size/viewport_height=640
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

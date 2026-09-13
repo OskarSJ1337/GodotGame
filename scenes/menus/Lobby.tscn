@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2l50c7tpjslu"]
+
+[ext_resource type="Texture2D" uid="uid://bkytgp82yslea" path="res://Assets/placeholders/Foggy mountains.png" id="1_la43x"]
+[ext_resource type="PackedScene" uid="uid://bihlbfdikk86r" path="res://scenes/other/high_level_ui.tscn" id="2_ddb6n"]
+
+[node name="Lobby" type="Node2D" unique_id=1287752945]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269347824]
+position = Vector2(575.88885, 323.62503)
+scale = Vector2(0.6030092, 0.6030093)
+texture = ExtResource("1_la43x")
+
+[node name="HighLevelUI" parent="." unique_id=660858735 instance=ExtResource("2_ddb6n")]
+offset_left = 422.0
+offset_top = 229.0
+offset_right = 463.0
+offset_bottom = 250.0
+size_flags_horizontal = 4
