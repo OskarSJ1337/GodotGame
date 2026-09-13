@@ -4,8 +4,8 @@ extends Node
 
 signal server_started
 
-const IP_ADDRESS: String = "localhost"
-const PORT: int = 42069
+const IP_ADDRESS: String = "77.53.247.252" 
+const PORT: int = 39999
 const MAX_CLIENTS: int = 10
 
 var peer: ENetMultiplayerPeer
