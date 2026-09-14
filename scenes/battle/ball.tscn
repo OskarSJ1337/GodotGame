@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bwvam1i2sglss" path="res://scenes/battle/ball.gd" id="1_tdgwq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b3qe"]
+radius = 16.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tdgwq"]
 properties/0/path = NodePath(".:position")
