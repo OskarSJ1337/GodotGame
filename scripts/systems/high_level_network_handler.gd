@@ -4,16 +4,14 @@ extends Node
 
 signal server_started
 
-const IP_ADDRESS: String = "77.53.247.252" 
-const PORT: int = 39999
 const MAX_CLIENTS: int = 10
 
 var peer: ENetMultiplayerPeer
 
 # Create client.
-func start_client() -> void:
+func start_client(ip: String, port: int) -> void:
 	peer = ENetMultiplayerPeer.new()
-	var error := peer.create_client(IP_ADDRESS, PORT)
+	var error := peer.create_client(ip, port)
 	if error != OK:
 		push_error("Could not create client: error code %s" % error)
 		peer = null
@@ -21,11 +19,11 @@ func start_client() -> void:
 	multiplayer.multiplayer_peer = peer
 
 # Create server.
-func start_server() -> void:
+func start_server(port: int) -> void:
 	peer = ENetMultiplayerPeer.new()
-	var error := peer.create_server(PORT, MAX_CLIENTS)
+	var error := peer.create_server(port, MAX_CLIENTS)
 	if error != OK:
-		push_error("Could not create server on port %d: error code %s. The port may already be in use." % [PORT, error])
+		push_error("Could not create server on port %d: error code %s. The port may already be in use." % [port, error])
 		peer = null
 		return
 	multiplayer.multiplayer_peer = peer

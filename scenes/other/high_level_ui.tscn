@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bihlbfdikk86r"]
 
 [ext_resource type="Script" uid="uid://r0khr250rm8e" path="res://scripts/systems/high_level_ui.gd" id="1_0aeln"]
+[ext_resource type="Script" uid="uid://c23dd5hnmlfnk" path="res://scripts/systems/changeScene.gd" id="2_vceky"]
+[ext_resource type="PackedScene" uid="uid://cuc4bpm1rhvax" path="res://scenes/battle/game.tscn" id="3_ojm4c"]
 
 [node name="HighLevelUI" type="Control" unique_id=660858735]
 layout_mode = 3
@@ -19,10 +21,14 @@ offset_bottom = 64.0
 [node name="Server" type="Button" parent="VBoxContainer" unique_id=698027648]
 layout_mode = 2
 text = "SERVER"
+script = ExtResource("2_vceky")
+next_scene = ExtResource("3_ojm4c")
 
 [node name="Client" type="Button" parent="VBoxContainer" unique_id=1115081677]
 layout_mode = 2
 text = "CLIENT"
+script = ExtResource("2_vceky")
+next_scene = ExtResource("3_ojm4c")
 
 [connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
 [connection signal="pressed" from="VBoxContainer/Client" to="." method="_on_client_pressed"]

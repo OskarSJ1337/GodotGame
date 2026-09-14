@@ -8,6 +8,7 @@ func _on_server_pressed():
 	var port := int(port_input.text)
 	print("IP: ", ip)
 	print("Port: ", port)
+	HighLevelNetworkHandler.start_server(port)
 
 
 func _on_client_pressed():
@@ -15,3 +16,4 @@ func _on_client_pressed():
 	var port := int(port_input.text)
 	print("IP: ", ip)
 	print("Port: ", port)
+	HighLevelNetworkHandler.start_client(ip, port)
