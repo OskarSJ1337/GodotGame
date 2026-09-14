@@ -12,6 +12,11 @@ func _ready() -> void:
 	set_multiplayer_authority(1)
 
 func _physics_process(delta: float) -> void:
+	# Kolla så det är en aktiv multiplayer instans igång
+	var peer := multiplayer.multiplayer_peer
+	if peer == null or peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
+		return
+
 	if not is_multiplayer_authority():
 		return
 	var col :KinematicCollision2D= move_and_collide(velocity)

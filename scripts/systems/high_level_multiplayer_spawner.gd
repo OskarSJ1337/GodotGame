@@ -5,8 +5,6 @@ const SPAWN_POSITIONS:= [Vector2(100,320), Vector2(700,320)]
 const PADDLE_COLORS:= [Color.REBECCA_PURPLE, Color.BLUE]
 var spawn_order := 0
 
-
-
 func _ready() -> void:
 	spawn_function = Callable(self, "_spawn_player")
 	multiplayer.peer_connected.connect(spawn_player)

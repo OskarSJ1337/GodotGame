@@ -11,6 +11,11 @@ func getYDir() -> float:
 
 
 func _physics_process(delta: float) -> void:
+	# Kolla så det är en aktiv multiplayer instans igång
+	var peer := multiplayer.multiplayer_peer
+	if peer == null or peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
+		return
+
 	if !is_multiplayer_authority(): return
 	var base_dir = Vector2(0,getYDir())
 	var dir: Vector2=base_dir.rotated(deg_to_rad(rotation_degrees))
