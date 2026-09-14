@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const start_speed := 5.0
 const ACCELERATION : int = 5
+const paddle_vel := 0.5
 var dir : Vector2
 
 func _draw():
@@ -31,11 +32,16 @@ func _physics_process(delta: float) -> void:
 	var peer := multiplayer.multiplayer_peer
 	if peer == null or peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
 		return
-
 	if not is_multiplayer_authority():
 		return
+		
 	var col :KinematicCollision2D= move_and_collide(velocity)
 	if col:
 		var normal := col.get_normal()
 		velocity = velocity.bounce(normal)
+		
+		var collider := col.get_collider()
+		if collider is CharacterBody2D:
+			velocity += collider.velocity * paddle_vel
+			velocity = velocity.normalized() * (velocity.length() + ACCELERATION)
 		
