@@ -12,7 +12,6 @@ func getYDir() -> float:
 
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
-	
 	var base_dir = Vector2(0,getYDir())
 	var dir: Vector2=base_dir.rotated(deg_to_rad(rotation_degrees))
 	velocity = dir * speed

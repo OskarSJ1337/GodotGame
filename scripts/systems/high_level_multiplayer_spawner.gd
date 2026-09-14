@@ -1,7 +1,11 @@
 extends MultiplayerSpawner
 
 @export var network_player : PackedScene
-@export var spawn_position := Vector2(400, 320)
+const SPAWN_POSITIONS:= [Vector2(100,320), Vector2(700,320)]
+const PADDLE_COLORS:= [Color.REBECCA_PURPLE, Color.BLUE]
+var spawn_order := 0
+
+
 
 func _ready() -> void:
 	spawn_function = Callable(self, "_spawn_player")
@@ -17,10 +21,16 @@ func _spawn_host_player() -> void:
 	
 func spawn_player(id: int) -> void:
 	if !multiplayer.is_server(): return
-	spawn({"id": id, "position": spawn_position})
+	spawn({
+		"id": id,
+		"position": SPAWN_POSITIONS[spawn_order],
+		"color": PADDLE_COLORS[spawn_order]
+	})
+	spawn_order += 1
 
 func _spawn_player(data: Dictionary) -> Node:
 	var player: Node = network_player.instantiate()
 	player.name = str(data["id"])
 	player.position = data["position"]
+	player.modulate = data["color"]
 	return player
