@@ -1,7 +1,7 @@
 extends MultiplayerSpawner
 
 @export var network_player : PackedScene
-const SPAWN_POSITIONS:= [Vector2(400,320), Vector2(700,320)]
+const SPAWN_POSITIONS:= [Vector2(384,488), Vector2(792,112)]
 const PADDLE_COLORS:= [Color.REBECCA_PURPLE, Color.BLUE]
 const PADDLE_ROTATION:= [315.0, 135.0]
 var spawn_order := 0

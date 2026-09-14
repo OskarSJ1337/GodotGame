@@ -11,6 +11,12 @@ func _ready() -> void:
 	# Sätter så bara servern kör bollen
 	set_multiplayer_authority(1)
 
+func new_ball():
+	# start position
+	position.x = 576
+	position.y = 312
+
+
 func _physics_process(delta: float) -> void:
 	# Kolla så det är en aktiv multiplayer instans igång
 	var peer := multiplayer.multiplayer_peer
@@ -23,3 +29,4 @@ func _physics_process(delta: float) -> void:
 	if col:
 		var normal := col.get_normal()
 		velocity = velocity.bounce(normal)
+		

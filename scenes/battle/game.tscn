@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cc7uays3creka" path="res://Assets/placeholders/placeholder.png" id="1_0tvmx"]
 [ext_resource type="Texture2D" uid="uid://cmih6oe4f75wl" path="res://Assets/placeholders/Placeholderbackground.png" id="1_md7un"]
+[ext_resource type="Script" uid="uid://k0vfujcr23fl" path="res://scripts/components/main_game_script.gd" id="1_o32of"]
 [ext_resource type="PackedScene" uid="uid://ctrtle1hw0e24" path="res://scenes/battle/paddle.tscn" id="1_sm3ht"]
 [ext_resource type="Script" uid="uid://doqn5gm6b22rd" path="res://scripts/systems/high_level_multiplayer_spawner.gd" id="4_l63dy"]
 [ext_resource type="PackedScene" uid="uid://bjlmaor4ohqo8" path="res://scenes/battle/ball.tscn" id="5_l63dy"]
+[ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="6_wg6ik"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p8roq"]
 a = Vector2(-64, -56)
@@ -44,9 +46,14 @@ size = Vector2(144, 640)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykgmc"]
 size = Vector2(1155.75, 27.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
+size = Vector2(358.6565, 160.5635)
+
 [node name="Game" type="Sprite2D" unique_id=1872106350]
+script = ExtResource("1_o32of")
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=150828939]
+collision_layer = 2
 
 [node name="BorderBackground" type="ColorRect" parent="Borders" unique_id=827136393]
 offset_right = 1152.0
@@ -122,3 +129,58 @@ network_player = ExtResource("1_sm3ht")
 
 [node name="Ball" parent="." unique_id=1524054120 instance=ExtResource("5_l63dy")]
 position = Vector2(576, 312)
+collision_mask = 3
+
+[node name="ScoreLeft" type="Area2D" parent="." unique_id=2034770371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLeft" unique_id=122082683]
+position = Vector2(326.8042, 566.8042)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_o32of")
+
+[node name="ScoreRight" type="Area2D" parent="." unique_id=1535569275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreRight" unique_id=541661301]
+position = Vector2(824.00006, 72)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_o32of")
+
+[node name="Hud" type="CanvasLayer" parent="." unique_id=183458004]
+
+[node name="PlayerOneScore" type="Label" parent="Hud" unique_id=465331348]
+offset_left = 168.0
+offset_top = 288.0
+offset_right = 264.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_wg6ik")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTwoScore" type="Label" parent="Hud" unique_id=1389824466]
+offset_left = 880.0
+offset_top = 288.0
+offset_right = 976.0
+offset_bottom = 349.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_wg6ik")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BallTimer" type="Timer" parent="." unique_id=2060772605]
+wait_time = 0.108
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
+[connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]
+[connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]

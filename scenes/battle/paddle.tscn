@@ -12,6 +12,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="Paddle" type="CharacterBody2D" unique_id=1281428957]
+collision_mask = 3
 script = ExtResource("1_f4eew")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579566708]
