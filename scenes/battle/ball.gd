@@ -19,6 +19,7 @@ func new_ball():
 	position.x = 576
 	position.y = 312
 	dir = random_direction()
+	velocity = Vector2(-start_speed,0)
 
 func random_direction():
 	var new_dir := Vector2()
