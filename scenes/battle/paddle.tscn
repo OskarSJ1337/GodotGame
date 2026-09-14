@@ -15,9 +15,15 @@ collision_mask = 3
 script = ExtResource("1_f4eew")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579566708]
-modulate = Color(0.63018167, 0.00030197232, 0.6326523, 1)
 position = Vector2(0, -2.3841858e-07)
 scale = Vector2(0.15624999, 0.46874997)
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite2D" unique_id=428332546]
+offset_left = -83.19995
+offset_top = -68.26668
+offset_right = 83.20007
+offset_bottom = 68.26665
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1274206318]
 offset_left = -64.0

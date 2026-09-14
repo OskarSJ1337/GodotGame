@@ -2,7 +2,7 @@ extends MultiplayerSpawner
 
 @export var network_player : PackedScene
 const SPAWN_POSITIONS:= [Vector2(384,488), Vector2(792,112)]
-const PADDLE_COLORS:= [Color.REBECCA_PURPLE, Color.BLUE]
+#const PADDLE_COLORS:= [Color.REBECCA_PURPLE, Color.BLUE]
 const PADDLE_ROTATION:= [315.0, 135.0]
 var spawn_order := 0
 
@@ -23,7 +23,7 @@ func spawn_player(id: int) -> void:
 	spawn({
 		"id": id,
 		"position": SPAWN_POSITIONS[spawn_order],
-		"color": PADDLE_COLORS[spawn_order],
+		"color": Color.from_hsv(randf(), 0.8, 1.0),
 		"rotation": PADDLE_ROTATION[spawn_order]
 	})
 	spawn_order += 1
