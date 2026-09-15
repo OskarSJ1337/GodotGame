@@ -14,7 +14,7 @@ b = Vector2(-240, 120)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_137o5"]
 a = Vector2(-64, 232)
-b = Vector2(0, 168)
+b = Vector2(1, 167)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0q8dx"]
 a = Vector2(512, 392)
@@ -22,18 +22,18 @@ b = Vector2(448, 328)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ykgmc"]
 a = Vector2(624, 504)
-b = Vector2(448, 328)
+b = Vector2(448, 326)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sm3ht"]
 a = Vector2(144, 144)
-b = Vector2(320, 320)
+b = Vector2(321, 321)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0tvmx"]
-a = Vector2(832, 320)
+a = Vector2(831, 320)
 b = Vector2(1008, 144)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4p6cv"]
-a = Vector2(576, 64)
+a = Vector2(577, 65)
 b = Vector2(512, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_86kjf"]
@@ -48,6 +48,9 @@ size = Vector2(1155.75, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
 size = Vector2(358.6565, 160.5635)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b3qe"]
+size = Vector2(359.31073, 21)
 
 [node name="Game" type="Sprite2D" unique_id=1872106350]
 script = ExtResource("1_o32of")
@@ -90,13 +93,14 @@ position = Vector2(128, 248)
 shape = SubResource("SegmentShape2D_0q8dx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders" unique_id=1688523703]
-position = Vector2(384, -8)
+position = Vector2(385, -9)
 shape = SubResource("SegmentShape2D_ykgmc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders" unique_id=1183609643]
 shape = SubResource("SegmentShape2D_sm3ht")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=1107396361]
+position = Vector2(2, -1)
 shape = SubResource("SegmentShape2D_0tvmx")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders" unique_id=1367590474]
@@ -180,6 +184,12 @@ vertical_alignment = 1
 wait_time = 0.108
 one_shot = true
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1644520822]
+position = Vector2(440.96445, 454.96445)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_8b3qe")
 
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]

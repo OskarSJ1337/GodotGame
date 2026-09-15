@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 const start_speed := 5.0
 const ACCELERATION : int = 5
-const paddle_vel := 0.5
+const paddle_vel := 0.2
 var dir : Vector2
+var max_speed := 100
+const max_speed_increase := 10
 
 func _draw():
 	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.WHITE)
@@ -19,6 +21,7 @@ func new_ball():
 	position.x = 576
 	position.y = 312
 	dir = random_direction()
+	velocity = Vector2(-start_speed,0)
 
 func random_direction():
 	var new_dir := Vector2()
@@ -42,6 +45,8 @@ func _physics_process(delta: float) -> void:
 		
 		var collider := col.get_collider()
 		if collider is CharacterBody2D:
+			var current_speed = velocity.length()
 			velocity += collider.velocity * paddle_vel
-			velocity = velocity.normalized() * (velocity.length() + ACCELERATION)
+			max_speed +=max_speed_increase
+			velocity = velocity.normalized() * min(current_speed + ACCELERATION, max_speed)
 		
