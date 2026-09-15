@@ -27,6 +27,12 @@ func spawn_player(id: int) -> void:
 		"rotation": PADDLE_ROTATION[spawn_order]
 	})
 	spawn_order += 1
+	
+	if spawn_order < 3:
+		$"../Borders/2p border1".visible = true
+		$"../Borders/2p border2".visible = true
+
+
 
 func _spawn_player(data: Dictionary) -> Node:
 	var player: Node = network_player.instantiate()
