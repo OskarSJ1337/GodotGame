@@ -22,9 +22,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if !is_multiplayer_authority(): return
-	var base_dir = Vector2(0,getYDir())
-	var dir: Vector2=base_dir.rotated(deg_to_rad(rotation_degrees))
-	velocity = dir * speed
+	velocity = Vector2.DOWN.rotated(global_rotation) * getYDir() * speed
 	move_and_slide()
 	
 	var offset := position - start_position

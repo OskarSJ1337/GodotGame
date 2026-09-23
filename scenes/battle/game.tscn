@@ -184,9 +184,25 @@ rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_o32of")
 
+[node name="Spawn1" type="Marker2D" parent="RotatingBorders/Borders" unique_id=1382469801]
+position = Vector2(384, 488)
+rotation = 5.497787
+
+[node name="Spawn2" type="Marker2D" parent="RotatingBorders/Borders" unique_id=1012696231]
+position = Vector2(760, 144)
+rotation = 2.3561945
+
+[node name="Spawn3" type="Marker2D" parent="RotatingBorders/Borders" unique_id=799098048]
+position = Vector2(416, 144)
+rotation = 0.7853982
+
+[node name="Spawn4" type="Marker2D" parent="RotatingBorders/Borders" unique_id=1302078072]
+position = Vector2(752, 480)
+rotation = 0.7853982
+
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1435765049]
 _spawnable_scenes = PackedStringArray("uid://ctrtle1hw0e24")
-spawn_path = NodePath("..")
+spawn_path = NodePath("../RotatingBorders/Borders")
 script = ExtResource("4_l63dy")
 network_player = ExtResource("1_sm3ht")
 

@@ -1,19 +1,12 @@
 extends MultiplayerSpawner
 
 @export var network_player : PackedScene
-const SPAWN_POSITIONS:= [
-	Vector2(384,488), 
-	Vector2(760,144), 
-	Vector2(416,144), 
-	Vector2(752,480)
-	]
-
-const PADDLE_ROTATION:= [
-	315.0, 
-	135.0, 
-	45.0, 
-	45.0
-	]
+@onready var SPAWN_POSITION: Array[Marker2D] = [
+	$"../RotatingBorders/Borders/Spawn1",
+	$"../RotatingBorders/Borders/Spawn2",
+	$"../RotatingBorders/Borders/Spawn3",
+	$"../RotatingBorders/Borders/Spawn4",
+]
 	
 var spawn_order := 0
 
@@ -32,12 +25,16 @@ func _spawn_host_player() -> void:
 func spawn_player(id: int) -> void:
 	if !multiplayer.is_server():
 		return
+	if spawn_order >= SPAWN_POSITION.size():
+		return
+
+	var marker := SPAWN_POSITION[spawn_order]
 	spawn({
 		"id": id,
-		"position": SPAWN_POSITIONS[spawn_order],
+		"position": marker.position,
+		"rotation": marker.rotation_degrees,
 		"color": Color.from_hsv(randf(), 0.8, 1.0),
-		"rotation": PADDLE_ROTATION[spawn_order],
-		"spawn_order": spawn_order
+		"spawn_order": spawn_order,
 	})
 	spawn_order += 1
 
@@ -50,8 +47,8 @@ func _spawn_player(data: Dictionary) -> Node:
 	player.rotation_degrees = data["rotation"]
 
 	if data["spawn_order"] == 2:
-		$"../Borders/2p border1".queue_free()
+		$"../RotatingBorders/Borders/2p border1".queue_free()
 	if data["spawn_order"] == 3:
-		$"../Borders/2p border2".queue_free()
+		$"../RotatingBorders/Borders/2p border2".queue_free()
 
 	return player
