@@ -13,4 +13,4 @@ volume_db = -8.0
 
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=349323632]
 stream = ExtResource("3_w7b15")
-volume_db = -5.0
+volume_db = -8.0

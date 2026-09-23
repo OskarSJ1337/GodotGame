@@ -6,6 +6,7 @@ const paddle_vel := 0.2
 var dir : Vector2
 var max_speed := 100
 const max_speed_increase := 5
+var last_paddle: CharacterBody2D = null
 
 func _draw():
 	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.WHITE)
@@ -29,7 +30,6 @@ func random_direction():
 	new_dir.y = randf_range(-1, 1)
 	return new_dir.normalized()
 
-
 func _physics_process(delta: float) -> void:
 	# Kolla så det är en aktiv multiplayer instans igång
 	var peer := multiplayer.multiplayer_peer
@@ -50,3 +50,6 @@ func _physics_process(delta: float) -> void:
 			max_speed +=max_speed_increase
 			velocity = velocity.normalized() * min(current_speed + ACCELERATION, max_speed)
 		
+			if collider != last_paddle:
+				last_paddle = collider
+				modulate = collider.modulate

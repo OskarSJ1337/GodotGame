@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const speed := 800.0
-
 var start_position: Vector2
 var move_axis: Vector2
 
