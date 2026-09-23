@@ -23,3 +23,10 @@ shape = SubResource("CircleShape2D_8b3qe")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=92231342]
 replication_config = SubResource("SceneReplicationConfig_tdgwq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=67485177]
+visible = false
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 24.0
