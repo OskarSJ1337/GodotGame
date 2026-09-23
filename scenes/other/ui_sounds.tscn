@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://tsl2n3htrdaj"]
+
+[ext_resource type="Script" uid="uid://bfql3coacbbll" path="res://ui_sounds.gd" id="1_dbhhb"]
+[ext_resource type="AudioStream" uid="uid://cos74ybqufgxs" path="res://audio/shadow_effect.mp3" id="2_5da6d"]
+[ext_resource type="AudioStream" uid="uid://c0qurpxybhuou" path="res://audio/shadow_hover.wav" id="3_w7b15"]
+
+[node name="UISounds" type="Node" unique_id=507568036]
+script = ExtResource("1_dbhhb")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1527918328]
+stream = ExtResource("2_5da6d")
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=349323632]
+stream = ExtResource("3_w7b15")
