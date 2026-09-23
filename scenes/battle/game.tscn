@@ -18,10 +18,13 @@ size = Vector2(144, 640)
 size = Vector2(1155.75, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4bih"]
-size = Vector2(101.66856, 103.4805)
+size = Vector2(100.70179, 102.61315)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31jh1"]
+size = Vector2(21.899733, 358.50317)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a15g"]
-size = Vector2(23.018703, 364.1601)
+size = Vector2(21.968489, 357.08896)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
 size = Vector2(361.3316, 160.18484)
@@ -83,22 +86,22 @@ position = Vector2(574.75, 654.5)
 shape = SubResource("RectangleShape2D_ykgmc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders" unique_id=1491030753]
-position = Vector2(575.78125, -3.937241)
+position = Vector2(575.71094, -4.234172)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_q4bih")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=1404850814]
-position = Vector2(576.3594, 644.5311)
+position = Vector2(576.3242, 644.8826)
 rotation = 0.7853982
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_q4bih")
 
 [node name="2p border1" type="CollisionShape2D" parent="Borders" unique_id=585145531]
-position = Vector2(444.16974, 183.31245)
+position = Vector2(442.0073, 185.5073)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_2a15g")
+shape = SubResource("RectangleShape2D_31jh1")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border1" unique_id=823789947]
 visible = false
@@ -109,7 +112,7 @@ offset_bottom = 181.4338
 color = Color(0.04755766, 0.047557645, 0.047557645, 1)
 
 [node name="2p border2" type="CollisionShape2D" parent="Borders" unique_id=1161708751]
-position = Vector2(712.88837, 452.38837)
+position = Vector2(711.01697, 454.51703)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2a15g")
