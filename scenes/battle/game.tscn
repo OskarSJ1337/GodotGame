@@ -4,30 +4,47 @@
 [ext_resource type="Texture2D" uid="uid://cmih6oe4f75wl" path="res://Assets/placeholders/Placeholderbackground.png" id="1_md7un"]
 [ext_resource type="Script" uid="uid://k0vfujcr23fl" path="res://scripts/components/main_game_script.gd" id="1_o32of"]
 [ext_resource type="PackedScene" uid="uid://ctrtle1hw0e24" path="res://scenes/battle/paddle.tscn" id="1_sm3ht"]
+[ext_resource type="Texture2D" uid="uid://j4xqonjhajqd" path="res://Assets/placeholders/TestStage.png" id="2_ig7ix"]
 [ext_resource type="Script" uid="uid://doqn5gm6b22rd" path="res://scripts/systems/high_level_multiplayer_spawner.gd" id="4_l63dy"]
 [ext_resource type="PackedScene" uid="uid://bjlmaor4ohqo8" path="res://scenes/battle/ball.tscn" id="5_l63dy"]
 [ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="6_wg6ik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7ix"]
-size = Vector2(250.31589, 251.73004)
+size = Vector2(303.74658, 304.40952)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd1pj"]
+size = Vector2(306.08887, 330.92603)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww4su"]
+size = Vector2(144, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q8dx"]
 size = Vector2(144, 640)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcqi4"]
+size = Vector2(1155.75, 27.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykgmc"]
 size = Vector2(1155.75, 27.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0nou"]
+size = Vector2(215.23837, 200.51965)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4bih"]
-size = Vector2(100.70179, 102.61315)
+size = Vector2(190.76746, 179.71481)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jh1"]
-size = Vector2(21.899733, 358.50317)
+size = Vector2(61.497677, 277.18585)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a15g"]
-size = Vector2(21.968489, 357.08896)
+size = Vector2(63.687744, 277.1859)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ig7ix"]
+a = Vector2(143.54266, -144.24979)
+b = Vector2(-135.0574, 9.899506)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
-size = Vector2(361.3316, 160.18484)
+size = Vector2(361.3316, 66.46806)
 
 [node name="Game" type="Sprite2D" unique_id=1872106350]
 script = ExtResource("1_o32of")
@@ -36,17 +53,38 @@ script = ExtResource("1_o32of")
 collision_layer = 2
 
 [node name="BorderBackground" type="ColorRect" parent="Borders" unique_id=827136393]
+visible = false
 offset_right = 1152.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
 
 [node name="GameBackground" type="ColorRect" parent="Borders" unique_id=856382347]
+visible = false
 offset_left = 256.0
 offset_right = 896.0
 offset_bottom = 640.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
+[node name="GameBackground2" type="ColorRect" parent="Borders" unique_id=382282754]
+offset_right = 144.0
+offset_bottom = 640.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="GameBackground3" type="ColorRect" parent="Borders" unique_id=900994674]
+offset_left = 1008.0
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="TestStage" type="Sprite2D" parent="Borders" unique_id=1972230397]
+z_index = -1
+position = Vector2(573, 322.00003)
+rotation = 0.7853982
+scale = Vector2(11.517166, 11.517166)
+texture = ExtResource("2_ig7ix")
+
 [node name="Placeholderbackground" type="Sprite2D" parent="Borders" unique_id=1092658260]
+visible = false
 position = Vector2(576.4574, 319.75003)
 scale = Vector2(1.2107751, 1.2107751)
 texture = ExtResource("1_md7un")
@@ -58,20 +96,20 @@ scale = Vector2(2.8806305, 2.8806305)
 texture = ExtResource("1_0tvmx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders" unique_id=1145547225]
-position = Vector2(1007, 320)
+position = Vector2(984.0156, 321.76563)
 rotation = 0.7853982
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_ig7ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders" unique_id=1644520822]
-position = Vector2(146.00002, 320)
+position = Vector2(151.78125, 330.78125)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_ig7ix")
+shape = SubResource("RectangleShape2D_gd1pj")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders" unique_id=1590974658]
 position = Vector2(72, 320)
-shape = SubResource("RectangleShape2D_0q8dx")
+shape = SubResource("RectangleShape2D_ww4su")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders" unique_id=701930312]
 position = Vector2(1080, 320)
@@ -79,49 +117,49 @@ shape = SubResource("RectangleShape2D_0q8dx")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders" unique_id=1214566713]
 position = Vector2(574.125, -13.75)
-shape = SubResource("RectangleShape2D_ykgmc")
+shape = SubResource("RectangleShape2D_gcqi4")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders" unique_id=365411639]
 position = Vector2(574.75, 654.5)
 shape = SubResource("RectangleShape2D_ykgmc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders" unique_id=1491030753]
-position = Vector2(575.71094, -4.234172)
+position = Vector2(567.79614, -20.99263)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_q4bih")
+shape = SubResource("RectangleShape2D_w0nou")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=1404850814]
-position = Vector2(576.3242, 644.8826)
+position = Vector2(576.9077, 648.9853)
 rotation = 0.7853982
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_q4bih")
 
 [node name="2p border1" type="CollisionShape2D" parent="Borders" unique_id=585145531]
-position = Vector2(442.0073, 185.5073)
+position = Vector2(453.25726, 202.25728)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_31jh1")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border1" unique_id=823789947]
-offset_left = -33.23402
-offset_top = -177.41672
-offset_right = 11.073353
-offset_bottom = 181.4338
-color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+offset_left = -46.589367
+offset_top = -138.69617
+offset_right = 31.184864
+offset_bottom = 141.34683
+color = Color(0.3403394, 0.3403393, 0.34033924, 1)
 
 [node name="2p border2" type="CollisionShape2D" parent="Borders" unique_id=1161708751]
-position = Vector2(711.01697, 454.51703)
+position = Vector2(693.517, 442.51703)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2a15g")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border2" unique_id=1156363844]
-offset_left = -10.67748
-offset_top = -184.11392
-offset_right = 32.993603
-offset_bottom = 182.48581
-color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+offset_left = -31.55376
+offset_top = -138.80185
+offset_right = 31.34425
+offset_bottom = 138.48016
+color = Color(0.1945776, 0.19686645, 0.17499545, 1)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1435765049]
 _spawnable_scenes = PackedStringArray("uid://ctrtle1hw0e24")
@@ -136,10 +174,10 @@ collision_mask = 3
 [node name="ScoreLeft" type="Area2D" parent="." unique_id=2034770371]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLeft" unique_id=122082683]
-position = Vector2(327.61612, 567.88385)
+position = Vector2(248.5, 641.5)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_o32of")
+shape = SubResource("SegmentShape2D_ig7ix")
 
 [node name="ScoreRight" type="Area2D" parent="." unique_id=1535569275]
 
