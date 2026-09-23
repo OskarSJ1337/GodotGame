@@ -9,6 +9,9 @@ radius = 16.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:modulate")
+properties/1/spawn = true
+properties/1/replication_mode = 2
 
 [node name="Ball" type="CharacterBody2D" unique_id=1524054120]
 script = ExtResource("1_tdgwq")
