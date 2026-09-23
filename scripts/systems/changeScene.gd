@@ -11,5 +11,4 @@ func _on_mouse_entered() -> void:
 func _pressed() -> void:
 	UiSounds.click.play()
 	if next_scene:
-		await UiSounds.click.finished
 		get_tree().change_scene_to_packed(next_scene)
