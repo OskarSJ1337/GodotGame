@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 const start_speed := 5.0
-const ACCELERATION : int = 5
+const ACCELERATION : int = 2
 const paddle_vel := 0.2
 var dir : Vector2
 var max_speed := 100
-const max_speed_increase := 10
+const max_speed_increase := 5
 
 func _draw():
 	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.WHITE)

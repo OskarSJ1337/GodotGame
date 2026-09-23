@@ -18,13 +18,13 @@ size = Vector2(144, 640)
 size = Vector2(1155.75, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4bih"]
-size = Vector2(102.70729, 102.88409)
+size = Vector2(101.66856, 103.4805)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a15g"]
-size = Vector2(22.727905, 364.56384)
+size = Vector2(23.018703, 364.1601)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
-size = Vector2(358.6565, 160.5635)
+size = Vector2(361.3316, 160.18484)
 
 [node name="Game" type="Sprite2D" unique_id=1872106350]
 script = ExtResource("1_o32of")
@@ -83,24 +83,25 @@ position = Vector2(574.75, 654.5)
 shape = SubResource("RectangleShape2D_ykgmc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders" unique_id=1491030753]
-position = Vector2(576.5, -3.187)
+position = Vector2(575.78125, -3.937241)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_q4bih")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=1404850814]
-position = Vector2(576.5, 645.125)
+position = Vector2(576.3594, 644.5311)
 rotation = 0.7853982
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_q4bih")
 
 [node name="2p border1" type="CollisionShape2D" parent="Borders" unique_id=585145531]
-position = Vector2(444.10724, 182.89276)
+position = Vector2(444.16974, 183.31245)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2a15g")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border1" unique_id=823789947]
+visible = false
 offset_left = -33.23402
 offset_top = -173.85571
 offset_right = 11.073353
@@ -108,14 +109,15 @@ offset_bottom = 181.4338
 color = Color(0.04755766, 0.047557645, 0.047557645, 1)
 
 [node name="2p border2" type="CollisionShape2D" parent="Borders" unique_id=1161708751]
-position = Vector2(712.00006, 453.00006)
+position = Vector2(712.88837, 452.38837)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2a15g")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border2" unique_id=1156363844]
-offset_left = -11.313771
-offset_top = -183.54456
+visible = false
+offset_left = -10.67748
+offset_top = -184.11392
 offset_right = 32.993603
 offset_bottom = 182.48581
 color = Color(0.04755766, 0.047557645, 0.047557645, 1)
@@ -133,7 +135,7 @@ collision_mask = 3
 [node name="ScoreLeft" type="Area2D" parent="." unique_id=2034770371]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLeft" unique_id=122082683]
-position = Vector2(326.8042, 566.8042)
+position = Vector2(327.61612, 567.88385)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_o32of")
