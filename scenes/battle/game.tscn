@@ -104,9 +104,8 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_31jh1")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border1" unique_id=823789947]
-visible = false
 offset_left = -33.23402
-offset_top = -173.85571
+offset_top = -177.41672
 offset_right = 11.073353
 offset_bottom = 181.4338
 color = Color(0.04755766, 0.047557645, 0.047557645, 1)
@@ -118,7 +117,6 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2a15g")
 
 [node name="ColorRect" type="ColorRect" parent="Borders/2p border2" unique_id=1156363844]
-visible = false
 offset_left = -10.67748
 offset_top = -184.11392
 offset_right = 32.993603
