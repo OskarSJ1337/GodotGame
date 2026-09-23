@@ -9,6 +9,8 @@ script = ExtResource("1_dbhhb")
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1527918328]
 stream = ExtResource("2_5da6d")
+volume_db = -8.0
 
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=349323632]
 stream = ExtResource("3_w7b15")
+volume_db = -5.0
