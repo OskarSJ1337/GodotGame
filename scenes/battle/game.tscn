@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b6cviafai2dtc" path="res://Assets/placeholders/TestBackground.png" id="6_gd1pj"]
 [ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="6_wg6ik"]
 [ext_resource type="Script" uid="uid://dgkvw7gm54eay" path="res://scripts/components/reset_board.gd" id="11_ww4su"]
+[ext_resource type="AudioStream" uid="uid://csa1ac52221c0" path="res://audio/music/WALUIGI PINBALL Remaster ► Mario Kart DS.mp3" id="12_gcqi4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ig7ix"]
 a = Vector2(143.54266, -144.24979)
@@ -332,6 +333,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bf6je")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uqy5n")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rfbvy")
 text = "Temp"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1240039327]
+stream = ExtResource("12_gcqi4")
+volume_db = -80.0
+autoplay = true
 
 [connection signal="body_entered" from="RotatingBorders/Borders/ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="RotatingBorders/Borders/ScoreRight" to="." method="_on_score_right_body_entered"]
