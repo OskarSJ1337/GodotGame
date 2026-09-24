@@ -53,3 +53,4 @@ func _physics_process(delta: float) -> void:
 			if collider != last_paddle:
 				last_paddle = collider
 				modulate = collider.modulate
+				$AudioStreamPlayer2D.play()

@@ -13,10 +13,6 @@
 [ext_resource type="Script" uid="uid://dgkvw7gm54eay" path="res://scripts/components/reset_board.gd" id="11_ww4su"]
 [ext_resource type="AudioStream" uid="uid://csa1ac52221c0" path="res://audio/music/WALUIGI PINBALL Remaster ► Mario Kart DS.mp3" id="12_gcqi4"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ig7ix"]
-a = Vector2(143.54266, -144.24979)
-b = Vector2(-135.0574, 9.899506)
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rotation"]
 properties/0/path = NodePath(".:rotation")
 properties/0/spawn = true
@@ -24,6 +20,10 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:is_rotating")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ig7ix"]
+a = Vector2(143.54266, -144.24979)
+b = Vector2(-135.0574, 9.899506)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7ix"]
 size = Vector2(303.74658, 304.40952)
@@ -108,7 +108,7 @@ color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 position = Vector2(572, 323)
 script = ExtResource("2_31jh1")
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RotatingBorders"]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RotatingBorders" unique_id=1279684886]
 replication_config = SubResource("SceneReplicationConfig_rotation")
 
 [node name="Borders" type="StaticBody2D" parent="RotatingBorders" unique_id=150828939]
@@ -347,7 +347,7 @@ text = "Temp"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1240039327]
 stream = ExtResource("12_gcqi4")
-volume_db = -80.0
+volume_db = -15.839
 autoplay = true
 
 [connection signal="body_entered" from="RotatingBorders/Borders/ScoreLeft" to="." method="_on_score_left_body_entered"]

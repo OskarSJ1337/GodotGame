@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjlmaor4ohqo8"]
 
 [ext_resource type="Script" uid="uid://bwvam1i2sglss" path="res://scenes/battle/ball.gd" id="1_tdgwq"]
+[ext_resource type="AudioStream" uid="uid://bm5gx00wpn45w" path="res://audio/sfx/Spring.wav" id="2_nnfka"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8b3qe"]
 radius = 16.0
@@ -30,3 +31,7 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 24.0
 offset_bottom = 24.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=224960695]
+stream = ExtResource("2_nnfka")
+volume_db = -15.721
