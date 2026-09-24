@@ -11,3 +11,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotation += deg_to_rad(rotation_speed) * delta
+	#$"../VBoxContainer/Rotate"

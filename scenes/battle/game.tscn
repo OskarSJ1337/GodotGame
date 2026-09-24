@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bjlmaor4ohqo8" path="res://scenes/battle/ball.tscn" id="5_l63dy"]
 [ext_resource type="Texture2D" uid="uid://b6cviafai2dtc" path="res://Assets/placeholders/TestBackground.png" id="6_gd1pj"]
 [ext_resource type="FontFile" uid="uid://dm0tf83ellxd4" path="res://Assets/fonts/Boring Time.otf" id="6_wg6ik"]
+[ext_resource type="Script" uid="uid://dgkvw7gm54eay" path="res://scripts/components/reset_board.gd" id="11_ww4su"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ig7ix"]
 a = Vector2(143.54266, -144.24979)
@@ -47,6 +48,38 @@ size = Vector2(63.687744, 277.1859)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o32of"]
 size = Vector2(361.3316, 66.46806)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hqyx"]
+bg_color = Color(0.95969635, 0.5800322, 0.6564213, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf6je"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqy5n"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfbvy"]
+bg_color = Color(0.86274654, 0.2967894, 0.4508534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 6
 
 [node name="Game" type="Sprite2D" unique_id=1872106350]
 script = ExtResource("1_o32of")
@@ -250,6 +283,57 @@ position = Vector2(544, 324.00003)
 scale = Vector2(10.08, 6.8)
 texture = ExtResource("6_gd1pj")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2088746205]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1016.0
+offset_top = 505.0
+offset_right = 1143.0
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 23
+
+[node name="Reset" type="Button" parent="VBoxContainer" unique_id=961585201]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hqyx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf6je")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uqy5n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rfbvy")
+text = "Reset"
+script = ExtResource("11_ww4su")
+
+[node name="Rotate" type="Button" parent="VBoxContainer" unique_id=1545332247]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hqyx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf6je")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uqy5n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rfbvy")
+text = "Rotate"
+
+[node name="Temp" type="Button" parent="VBoxContainer" unique_id=2097595643]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.02990414, 0.19671607, 0.19291523, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hqyx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf6je")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uqy5n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rfbvy")
+text = "Temp"
+
 [connection signal="body_entered" from="RotatingBorders/Borders/ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="RotatingBorders/Borders/ScoreRight" to="." method="_on_score_right_body_entered"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/Reset" to="VBoxContainer/Reset" method="_on_pressed"]
